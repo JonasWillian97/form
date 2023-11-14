@@ -1,0 +1,32 @@
+$padding:20px;
+$cursor: no-drop;
+$display: flex;
+$direction: column;
+$textAlign: center;
+$h2: 30px;
+$color: blue;
+
+mat-card{
+    margin: 50px 20px;
+    padding: $padding;
+}
+
+h2{
+    text-align: $textAlign;
+    font-size: $h2;
+    color: $color;
+}
+
+form{
+    display: $display;
+    flex-direction: $direction;
+}
+
+.radio{
+    display: $display;
+    flex-direction: $direction;
+}
+
+button:disabled{
+    cursor: cursor;
+}
