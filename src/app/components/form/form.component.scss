@@ -5,6 +5,11 @@ $direction: column;
 $textAlign: center;
 $h2: 30px;
 $color: blue;
+$fontSize: 18px;
+$borderRadius: 6px;
+$justifyContent: center;
+$alignItems: center;
+$background: rgb(235, 118, 118);
 
 mat-card{
     margin: 50px 20px;
@@ -29,4 +34,15 @@ form{
 
 button:disabled{
     cursor: cursor;
+}
+
+span{
+    background-color: $background;
+    color: #fff;
+    display: $display;
+    align-items: $alignItems;
+    justify-content: $justifyContent;
+    padding: 10px;
+    font-size: $fontSize;
+    border-radius: $borderRadius;
 }

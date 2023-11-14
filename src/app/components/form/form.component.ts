@@ -18,6 +18,18 @@ constructor(private fb: NonNullableFormBuilder){
  
 }
 
+get name(){
+  return this.form.get('name')!;
+}
+
+get email(){
+  return this.form.get('email')!;
+}
+
+get gender(){
+  return this.form.get('gender')!;
+}
+
 
 onSubmit(){
   console.log(this.form.value.name);

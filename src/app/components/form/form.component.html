@@ -3,23 +3,34 @@
         <h2>{{h2 | titlecase}}</h2>
         <mat-form-field>
             <mat-label>Nome</mat-label>
-            <input matInput formControlName="name">
+            <input matInput formControlName="name" placeholder="Digite seu nome...">
+            <div *ngIf="name.invalid && name.touched">
+                <span *ngIf="name.errors?.['required']">O campo é obrigatório!</span>
+                <span *ngIf="name.errors?.['minlength']">O campo requer ao menos 3 caracteres!</span>
+            </div>
           </mat-form-field>
 
           <mat-form-field>
             <mat-label>Email</mat-label>
-            <input matInput formControlName="email">
+            <input matInput formControlName="email" placeholder="email@email.com">
+            <div *ngIf="email.invalid && email.touched">
+                <span *ngIf="email.errors?.['required']">O campo é obrigatório!</span>
+                <span *ngIf="email.errors?.['email']">Insira um email válido!</span>
+            </div>
           </mat-form-field>
 
           <div class="radio">
             <label>Sexo </label>
-            <mat-radio-group formControlName="gender" >
+            <mat-radio-group formControlName="gender" value="masculino" >
               <mat-radio-button value="masculino">Masculino</mat-radio-button>
               <mat-radio-button value="feminino">Feminino</mat-radio-button>
               <mat-radio-button value="outro">Outro</mat-radio-button>
+              <div *ngIf="gender.invalid && gender.touched">
+                <span *ngIf="gender.errors?.['required']">O campo é obrigatório!</span>
+            </div>
             </mat-radio-group>
           </div>
+          <button mat-raised-button color="primary" (click)="onSubmit()">Enviar</button>
     </form>
 
-    <button mat-raised-button color="primary" (click)="onSubmit()">Enviar</button>
 </mat-card>
